@@ -1,0 +1,18 @@
+<%= form_with(model: demo) do |form| %>
+  <% if demo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(demo.errors.count, "error") %> prohibited this demo from being saved:</h2>
+
+      <ul>
+        <% demo.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form.text_field :cool_col %>
+
+  <div class="actions">
+    <%= form.submit 'Submit!', data: { disable: true, disable_with: 'I am disabled!' } %>
+  </div>
+<% end %>

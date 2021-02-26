@@ -1,0 +1,30 @@
+<turbo-frame id="coolframe">
+<p id="notice"><%= notice %></p>
+
+<h1>Demos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @demos.each do |demo| %>
+      <tr>
+        <td><%= demo.cool_col %></td>
+        <td><%= link_to 'Show', demo %></td>
+        <td><%= link_to 'Edit', edit_demo_path(demo) %></td>
+        <td><%= link_to 'Destroy', demo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= render 'demos/form', demo: Demo.new %>
+
+<%= link_to 'New Demo', new_demo_path %>
+</turbo-frame>
